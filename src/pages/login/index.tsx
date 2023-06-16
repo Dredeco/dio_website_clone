@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Header from '@/components/Header'
 import styled from 'styled-components'
-import ImageBg from '../../public/banner.png'
+import ImageBg from '../../../public/banner.png'
 import Button from '@/components/Button'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -43,7 +43,7 @@ const Container = styled.div`
 `
 
 
-export default function Home() {
+export default function Login() {
   return (
     <>
       <Head>
@@ -56,9 +56,7 @@ export default function Home() {
           <Header />
           <Container>
             <div>
-              <h1><p>Implemente</p>o seu futuro global agora!</h1>
-              <span>Domine as tecnologias utilizadas pelas empresas mais inovadoras do mundo e encare seu novo desafio profissional, evoluindo em comunidade com os melhores experts.</span>
-              <Button title='Começar agora' variant='secondary' />
+              <h2>A plataforma para você aprender com experts, dominar as principais tecnologias e entrar mais rápido nas empresas mais desejadas.</h2>
             </div>
             <Image 
               src={ImageBg}
