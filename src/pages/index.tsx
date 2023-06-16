@@ -30,12 +30,14 @@ const Container = styled.div`
     width: 36.8rem;
     h1 {
       font-size: 3.2rem;
+      font-weight: 700;
       p{
         color: #E4105D;
       }
     };
     span {
       display: block;
+      font-size: 1.6rem;
       margin-top: 1.3rem;
       margin-bottom: 5rem;
     }
