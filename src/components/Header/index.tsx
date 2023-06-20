@@ -3,6 +3,9 @@ import styled from "styled-components";
 import Logo from '../../../public/logo-dio.png'
 import Button from "../Button";
 import Link from "next/link";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ['latin'] })
 
 const TagHeader = styled.header`
   background-color: #151515;
@@ -11,6 +14,8 @@ const TagHeader = styled.header`
 const Container = styled.div`
   display: flex;
   width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
   height: 100%;
   align-items: center;
   padding: .5rem 6rem;
@@ -29,7 +34,7 @@ const Container = styled.div`
 
 const Header = () => {
   return (
-    <TagHeader>
+    <TagHeader className={`${inter.className}`}>
       <Container>
         <Link
           href='/'

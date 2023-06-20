@@ -1,9 +1,6 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import Header from '@/components/Header'
 import styled from 'styled-components'
-import ImageBg from '../../../public/banner.png'
 import Button from '@/components/Button'
 import Input from '@/components/Input'
 import EmailIcon from '@/components/Icons/EmailIcon'
@@ -39,13 +36,14 @@ const Container = styled.div`
 `
 const FormContainer = styled.div`
   form {
-    width: 27rem;
+    width: 36rem;
     display: flex;
     flex-direction: column;
     h1 {
       font-size: 3.2rem;
     }
     span {
+      margin-top: .8rem;
       font-size: 1.6rem;
       margin-bottom: 3.5rem;
     }
@@ -60,23 +58,19 @@ const FormContainer = styled.div`
       width: 100%;
     }
   }
-  .links {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 4rem;
-    a {
-      text-decoration: none;
-      font-size: 1.4rem;
-      font-weight: 700;
-    }
-    .forgotPassword {
-      color: #E5E044;
-    }
-    .newUser {
-      color: #23DD7A;
-    }
+  .register-info {
+      margin-top: 3rem;
+      font-size: 1.6rem;
+      max-width: 37rem;
+      p {
+        margin-top: 1rem;
+        font-weight: 700;
+        a {
+          text-decoration: none;
+          color: #23DD7A;
+          margin-left: .5rem;
+        }
+      }
   }
 `
 
@@ -95,19 +89,20 @@ export default function Login() {
             <h2>A plataforma para você aprender com experts, dominar as principais tecnologias e entrar mais rápido nas empresas mais desejadas.</h2>
             <FormContainer>
               <form>
-                <h1>Login</h1>
-                <span>Faça seu login e make the change</span>
+                <h1>Comece agora grátis</h1>
+                <span>Crie sua conta e make the change</span>
+                <Input name='Nome Completo' leftIcon={<EmailIcon />} type='text' />
                 <Input name='E-mail' leftIcon={<EmailIcon />} type='email' />
                 <Input name='Password' leftIcon={<LockIcon />} type='password' />
-                <Button title='Entrar' variant='secondary' type='button' />
+                <Button title='Criar minha conta' variant='secondary' type='button' />
               </form>
-              <div className='links'>
-                <Link href='/' className='forgotPassword'>
-                  Esqueci minha senha
-                </Link>
+              <div className='register-info'>
+                <span>{'Ao clicar em "criar minha conta grátis", declaro que aceito as Políticas de Privacidade e os Termos de Uso da DIO.'}</span>
+                <p>Já tenho conta. 
                 <Link href='/' className='newUser'>
-                  Criar conta
+                  Fazer login
                 </Link>
+                </p>
               </div>
             </FormContainer>
           </Container>
