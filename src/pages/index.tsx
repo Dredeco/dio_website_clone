@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import Header from '@/components/Header'
 import styled from 'styled-components'
 import ImageBg from '../../public/banner.png'
 import Button from '@/components/Button'
@@ -11,10 +10,11 @@ const inter = Inter({ subsets: ['latin'] })
 const Main = styled.main`
     width: 100%;
     max-width: 1280px;
-    min-height: 100vh;
+    min-height: 90vh;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     background-color: #1E192C;
 `
@@ -44,7 +44,6 @@ const Container = styled.div`
   }
 `
 
-
 export default function Home() {
   return (
     <>
@@ -55,7 +54,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
         <Main className={`${inter.className}`}>
-          <Header />
           <Container>
             <div>
               <h1><p>Implemente</p>o seu futuro global agora!</h1>
