@@ -3,14 +3,15 @@ import { IButtonStyled } from './types';
 import { IButton } from "./types";
 
 const TagButton = styled.button<IButtonStyled>`
-  position: relative;
   width: 12rem;
+  position: relative;
+  padding: .2rem 0;
   background-color: #565656;
   font-size: 1.8rem;
   color: #fff;
   border-radius: 1.1rem;
-  padding: .2rem 0;
   cursor: pointer;
+
   ${({variant}) => variant !== 'primary' && css`
     min-width: 16.7rem;
     background-color: #E4105D;
@@ -30,10 +31,10 @@ const TagButton = styled.button<IButtonStyled>`
   `}
 `
 
-const Button = ({title, variant = 'primary'}: IButton) => {
+const Button = ({ title, variant = 'primary', onClick }: IButton) => {
   return (
     <div>
-      <TagButton variant={variant}>
+      <TagButton variant={variant} onClick={onClick}>
         {title}
       </TagButton>
     </div>

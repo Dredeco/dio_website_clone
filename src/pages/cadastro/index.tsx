@@ -6,20 +6,21 @@ import Input from '@/components/Input'
 import EmailIcon from '@/components/Icons/EmailIcon'
 import LockIcon from '@/components/Icons/LockIcon'
 import Link from 'next/link'
+import UserIcon from '@/components/Icons/UserIcon'
 
 const inter = Inter({ subsets: ['latin'] })
 
 const Main = styled.main`
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #1E192C;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1E192C;
 `
 const Container = styled.div`
   width: 100%;
+  max-width: 1280px;
   height: 90vh;
   display: flex;
   padding: 0 6.5rem;
@@ -91,7 +92,7 @@ export default function Login() {
               <form>
                 <h1>Comece agora grátis</h1>
                 <span>Crie sua conta e make the change</span>
-                <Input name='Nome Completo' leftIcon={<EmailIcon />} type='text' />
+                <Input name='Nome Completo' leftIcon={<UserIcon />} type='text' />
                 <Input name='E-mail' leftIcon={<EmailIcon />} type='email' />
                 <Input name='Password' leftIcon={<LockIcon />} type='password' />
                 <Button title='Criar minha conta' variant='secondary' type='button' />
@@ -99,7 +100,7 @@ export default function Login() {
               <div className='register-info'>
                 <span>{'Ao clicar em "criar minha conta grátis", declaro que aceito as Políticas de Privacidade e os Termos de Uso da DIO.'}</span>
                 <p>Já tenho conta. 
-                <Link href='/' className='newUser'>
+                <Link href='/login' className='newUser'>
                   Fazer login
                 </Link>
                 </p>

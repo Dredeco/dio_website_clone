@@ -52,12 +52,17 @@ const Header = () => {
           >
             Home
           </Link>
-          <Button 
-            title='Entrar'
-          />
+
+          <Link href='/login'>
+            <Button 
+              title='Entrar'
+            />
+          </Link>
+          <Link href='/cadastro'>
           <Button 
             title='Cadastrar'
           />
+          </Link>
         </div>
       </Container>
     </TagHeader>

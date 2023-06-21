@@ -6,6 +6,9 @@ const InputContainer = styled.div`
   flex-direction: row;
   gap: .8rem;
   align-items: center;
+  svg {
+    fill: #8647AD;
+  }
 `
 
 const TagInput = styled.input`
@@ -18,7 +21,7 @@ const TagInput = styled.input`
 const Input = ({leftIcon, name, type}: IInput) => {
   return (
     <InputContainer>
-      {leftIcon ? <>{leftIcon}</> : null}
+      {leftIcon ? leftIcon : null}
       <TagInput placeholder={name} type={type} />
     </InputContainer>
   )

@@ -1,9 +1,6 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import Header from '@/components/Header'
 import styled from 'styled-components'
-import ImageBg from '../../../public/banner.png'
 import Button from '@/components/Button'
 import Input from '@/components/Input'
 import EmailIcon from '@/components/Icons/EmailIcon'
@@ -13,16 +10,16 @@ import Link from 'next/link'
 const inter = Inter({ subsets: ['latin'] })
 
 const Main = styled.main`
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #1E192C;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1E192C;
 `
 const Container = styled.div`
   width: 100%;
+  max-width: 1280px;
   height: 90vh;
   display: flex;
   padding: 0 6.5rem;
@@ -105,7 +102,7 @@ export default function Login() {
                 <Link href='/' className='forgotPassword'>
                   Esqueci minha senha
                 </Link>
-                <Link href='/' className='newUser'>
+                <Link href='/cadastro' className='newUser'>
                   Criar conta
                 </Link>
               </div>
