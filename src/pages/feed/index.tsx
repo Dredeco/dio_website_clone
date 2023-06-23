@@ -1,9 +1,11 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styled from 'styled-components'
-import Button from '@/components/Button'
-import Link from 'next/link'
+import Header from '@/components/Header'
+import Image from 'next/image'
+import cardImage from '../../../public/card-img.png' 
+import userImage from '../../../public/user.png'
+import ThumbsUpIcons from '@/components/Icons/ThumbsUpIcon'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,20 +28,70 @@ const Container = styled.div`
   color: #fff;
   justify-content: space-between;
 
-  div {
-    width: 36.8rem;
-    h1 {
-      font-size: 3.2rem;
-      font-weight: 700;
-      p{
-        color: #E4105D;
+  .main {
+    .card {
+      max-width: 76.7rem;
+      background-color: #3B4651;
+      .card-info {
+        padding: .5rem 1.2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.3rem;
+        font-size: 1.6rem;
+        .card-user-info {
+          display: flex;
+          gap: .9rem;
+          align-items: center;
+        }
+        .card-post-info {
+          display: flex;
+          flex-direction: column;
+          gap: .5rem;
+          p {
+            color: #ccc;
+          }
+          .post-likes {
+            display: flex;
+            align-items: center;
+            fill: white;
+            gap: .5rem;
+          }
+        }
       }
-    };
-    span {
-      display: block;
-      font-size: 1.6rem;
-      margin-top: 1.3rem;
-      margin-bottom: 5rem;
+    }
+  }
+
+  .ranking {
+    height: 35.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    .ranking-container {
+      .ranking-user {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        .ranking-user-status{
+          font-size: 1.6rem;
+          .ranking-status {
+            width: 180px;
+            height: 6px;
+            background-color: #FFFFFF;
+            border-radius: 3px;
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 80%;
+                height: 6px;
+                border-radius: 3px;
+                background-color: #23DD7A;
+            }
+          }
+        }
+      }
     }
   }
 `
@@ -55,13 +107,59 @@ export default function Feed() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
         <Main className={`${inter.className}`}>
+          <Header />
           <Container>
-            <div>
-              <h1><p>Implemente</p>o seu futuro global agora!</h1>
-              <span>Domine as tecnologias utilizadas pelas empresas mais inovadoras do mundo e encare seu novo desafio profissional, evoluindo em comunidade com os melhores experts.</span>
-              <Link href={`/login`}>
-                <Button title='Começar agora' variant='secondary' />
-              </Link>
+            <div className="main">
+              <div className="card">
+                <Image 
+                  src={cardImage}
+                  alt='card image'
+                  width={767}
+                  height={160}
+                  layout='responsive'
+                />
+                <div className="card-info">
+                  <div className="card-user-info">
+                    <Image 
+                      src={userImage}
+                      alt='user image'
+                      width={32}
+                      height={32}
+                    />
+                    <div>
+                      <h3>Pablo Henrique</h3>
+                      <span>Há 8 minutos</span>
+                    </div>
+                  </div>
+
+                  <div className="card-post-info">
+                    <h2>Projeto para curso de HTML e CSS</h2>
+                    <span>Projeto feito no curso de html e csss no bootcamp da DIO do Global awanade... <strong>Ver Mais</strong></span>
+                    <p>#HTML #CSS #JavaScript</p>
+                    <div className="post-likes">
+                      <ThumbsUpIcons /><h2>10</h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="ranking">
+              <h1># RANKING TOP 5 DA SEMANA</h1>
+              <div className="ranking-container">
+                <div className="ranking-user">
+                  <Image 
+                    src={userImage}
+                    alt='user image'
+                    width={35}
+                    height={35}                    
+                  />
+                  <div className="ranking-user-status">
+                    <h3>Pablo Henrique</h3>
+                    <div className="ranking-status"></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </Container>
         </Main>

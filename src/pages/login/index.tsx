@@ -6,6 +6,7 @@ import Input from '@/components/Input'
 import EmailIcon from '@/components/Icons/EmailIcon'
 import LockIcon from '@/components/Icons/LockIcon'
 import Link from 'next/link'
+import Header from '@/components/Header'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -88,6 +89,7 @@ export default function Login() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
         <Main className={`${inter.className}`}>
+          <Header />
           <Container>
             <h2>A plataforma para você aprender com experts, dominar as principais tecnologias e entrar mais rápido nas empresas mais desejadas.</h2>
             <FormContainer>
