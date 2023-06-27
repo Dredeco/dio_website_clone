@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import ImageBg from '../../public/banner.png'
 import Button from '@/components/Button'
 import Link from 'next/link'
-import Header from '@/components/Header'
+import { Header } from '@/components/Header'
 
 const inter = Inter({ subsets: ['latin'] })
 

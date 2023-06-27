@@ -33,11 +33,9 @@ const TagButton = styled.button<IButtonStyled>`
 
 const Button = ({ title, variant = 'primary', onClick }: IButton) => {
   return (
-    <div>
       <TagButton variant={variant} onClick={onClick}>
         {title}
       </TagButton>
-    </div>
   )
 }
 

@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import styled from 'styled-components'
-import Header from '@/components/Header'
+import { Header } from '@/components/Header'
 import Image from 'next/image'
 import cardImage from '../../../public/card-img.png' 
 import userImage from '../../../public/user.png'
